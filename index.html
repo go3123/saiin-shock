@@ -23,11 +23,11 @@
                         eng: ['"Cormorant Garamond"', 'serif'],
                     },
                     colors: {
-                        primary: '#0a1931', // ★より深く、高級感のある濃紺（ディープネイビー）に変更
+                        primary: '#0a1931', 
                         secondary: '#334155', 
-                        gold: '#d4af37', // 落ち着いたゴールド
+                        gold: '#d4af37', 
                         goldlight: '#fde047',
-                        accent: '#00B900', // LINEグリーン
+                        accent: '#00B900', 
                         bglight: '#f8fafc',
                     }
                 }
@@ -69,30 +69,29 @@
         </div>
     </header>
 
-    <!-- 01. ファーストビュー (FV) - 写真を見せ、権威性を高めるレイアウトに改修 -->
+    <!-- 01. ファーストビュー (FV) -->
     <section class="relative text-white pt-10 pb-16 px-4 md:py-24 overflow-hidden flex flex-col justify-center min-h-[80vh] md:min-h-[600px] bg-primary">
         
         <!-- デザイン背景レイヤー -->
-        <div class="absolute inset-0 z-0 bg-slate-900">
-            <!-- 引きの画像（全体背景） -->
-            <img src="images/fv-bg.jpg" alt="施術風景" class="absolute inset-0 w-full h-full object-cover object-center opacity-40 md:opacity-50">
+        <div class="absolute inset-0 z-0 bg-primary">
+            <!-- 引きの画像（全体背景）スマホでも明るく見えるようにopacityを調整 -->
+            <img src="images/fv-bg.jpg" alt="施術風景" class="absolute inset-0 w-full h-full object-cover object-center opacity-60 md:opacity-50">
             
-            <!-- 寄りの画像（右側にふんわり重ねて、写真をクリアに見せる） -->
-            <div class="absolute top-0 right-0 w-full md:w-3/5 h-full opacity-60 md:opacity-80 mask-image-gradient hidden md:block">
+            <!-- 寄りの画像（スマホでも薄く表示して明るさと臨場感を出す） -->
+            <div class="absolute top-0 right-0 w-full md:w-3/5 h-full opacity-60 md:opacity-80 mask-image-gradient">
                 <img src="images/fv-sub.jpg" alt="足裏への施術" class="w-full h-full object-cover object-center">
             </div>
 
-            <!-- ネイビーのグラデーション（左側を濃くして文字を読みやすく、右側は写真を見せる） -->
+            <!-- ネイビーのグラデーション（PC用） -->
             <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent hidden md:block"></div>
-            <!-- スマホ用のグラデーション（下から上へ） -->
-            <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40 md:hidden"></div>
+            <!-- スマホ用のグラデーション（下を濃くして文字を読みやすく、上は薄くして写真を見せる） -->
+            <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/10 md:hidden"></div>
         </div>
 
-        <!-- コンテンツエリア（左寄せにしてスタイリッシュに） -->
+        <!-- コンテンツエリア -->
         <div class="max-w-5xl mx-auto relative z-10 w-full flex flex-col md:flex-row items-center">
             <div class="w-full md:w-3/5 text-center md:text-left pt-6 md:pt-0">
                 
-                <!-- ★権威性バッジを一番上に配置して強調 -->
                 <div class="flex flex-wrap gap-2 md:gap-3 justify-center md:justify-start mb-6">
                     <div class="bg-gradient-to-r from-gold to-yellow-500 text-primary px-3 py-1.5 md:px-4 md:py-2 rounded-full shadow-lg flex items-center font-bold text-xs md:text-sm">
                         <i class="fas fa-certificate mr-1.5"></i> 厚生労働省認可機器導入
@@ -107,12 +106,12 @@
                     <span class="inline-block">「そのうち治る」で、</span><br>
                     <span class="inline-block">もう<span class="text-goldlight text-5xl lg:text-6xl mx-1 md:mx-2">3</span>ヶ月</span><span class="inline-block">無駄にしていませんか？</span>
                 </h2>
+                <!-- ※「終わりにしましょ / う。」とならないように修正 -->
                 <p class="text-gray-100 text-sm md:text-base lg:text-lg mb-8 leading-relaxed drop-shadow-md font-medium">
                     <span class="inline-block">メスを入れない「組織修復」の最新アプローチ。</span><br>
-                    <span class="inline-block">毎週のようにシップを貼り替える毎日は終わりにしましょう。</span>
+                    <span class="inline-block">毎週のようにシップを貼り替える毎日は</span><span class="inline-block">終わりにしましょう。</span>
                 </p>
                 
-                <!-- オファー枠 -->
                 <div class="bg-primary/60 backdrop-blur-md border-l-4 border-gold text-white p-5 md:p-6 shadow-2xl mb-8 max-w-lg mx-auto md:mx-0 inline-block text-left rounded-r-lg">
                     <p class="font-bold text-sm mb-2 tracking-widest text-gray-200">ショックマスターを用い、</p>
                     <p class="text-2xl md:text-3xl font-serif font-bold text-goldlight drop-shadow-sm">まずは<span class="text-4xl md:text-5xl mx-2 text-white">5</span>回を目安に</p>
@@ -120,7 +119,6 @@
                 </div>
             </div>
             
-            <!-- 右側は写真を活かすために空けておく -->
             <div class="w-full md:w-2/5"></div>
         </div>
     </section>
@@ -129,7 +127,6 @@
     <section class="bg-primary pt-4 pb-16 px-4 relative z-20 border-b-8 border-bglight">
         <div class="max-w-4xl mx-auto">
             
-            <!-- 実績バッジ -->
             <div class="flex justify-center mb-10 -mt-10 relative z-30">
                 <div class="bg-gold-gradient text-white px-8 py-3 rounded-full shadow-xl font-bold text-sm md:text-lg tracking-widest flex items-center gap-4">
                     <span>地域密着 <span class="text-2xl font-serif mx-1">13</span>年</span>
@@ -138,7 +135,6 @@
                 </div>
             </div>
 
-            <!-- サブキャッチ -->
             <div class="text-center text-white mb-10">
                 <p class="text-sm md:text-base tracking-widest-plus mb-3"><span class="inline-block">国家資格者が専門機器を用いて</span></p>
                 <h2 class="text-3xl md:text-4xl font-serif font-bold tracking-widest">
@@ -146,7 +142,6 @@
                 </h2>
             </div>
 
-            <!-- オファーボックス（ゴールド枠） -->
             <div class="border-2 border-gold p-6 md:p-10 relative">
                 <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary border border-gold px-6 py-2 text-goldlight font-bold text-sm md:text-base whitespace-nowrap tracking-widest">
                     本気で「最後の施術」にしたいあなたへ
@@ -289,8 +284,9 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
                 <p class="font-eng text-gold font-bold mb-3 tracking-widest-plus text-lg">3 REASONS TO CHOOSE US</p>
+                <!-- ※「理 / 由」と改行されないように修正 -->
                 <h2 class="text-2xl md:text-3xl font-serif font-bold text-primary mb-6 leading-relaxed">
-                    当院の施術プログラムが選ばれる理由
+                    <span class="inline-block">当院の施術プログラムが</span><span class="inline-block">選ばれる理由</span>
                 </h2>
                 <div class="w-16 h-1 bg-gold mx-auto"></div>
             </div>
